@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adhithya Sree A - Portfolio</title>
+    
+    <!-- External CSS -->
+    <style>
+        /* External CSS - Overall layout and design */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #ffffff;
+            background: #0a0a0a;
+            min-height: 100vh;
+        }
+
+        /* Navigation Menu */
+        .nav-menu {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: rgba(138, 43, 226, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            border-radius: 15px;
+            padding: 15px 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: block;
+        }
+
+        .nav-links a:hover {
+            color: #ba55d3;
+            background: rgba(138, 43, 226, 0.2);
+            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.3);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            padding-top: 100px; /* Space for fixed navigation */
+        }
+
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.1), rgba(75, 0, 130, 0.1));
+            border-radius: 20px;
+            margin-bottom: 60px;
+            backdrop-filter: blur(10px);
+        }
+
+        .profile-container {
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 4px solid #8a2be2;
+            box-shadow: 0 0 40px rgba(138, 43, 226, 0.5);
+            background: linear-gradient(45deg, #8a2be2, #ba55d3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            font-weight: bold;
+            color: white;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, #8a2be2, #9370db, #ba55d3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .professional-title {
+            font-size: 1.4em;
+            margin-bottom: 30px;
+            color: #b19cd9;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(138, 43, 226, 0.1);
+            padding: 12px 20px;
+            border-radius: 25px;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+        }
+
+        .contact-item:hover {
+            background: rgba(138, 43, 226, 0.2);
+            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.3);
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: #ba55d3;
+        }
+
+        .section {
+            margin-bottom: 80px;
+            padding: 40px;
+            background: rgba(138, 43, 226, 0.05);
+            border-radius: 20px;
+            border: 1px solid rgba(138, 43, 226, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            text-align: center;
+            background: linear-gradient(45deg, #8a2be2, #ba55d3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #8a2be2, #ba55d3);
+            border-radius: 2px;
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .about-profile {
+            flex-shrink: 0;
+        }
+
+        .about-profile-img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 4px solid #8a2be2;
+            box-shadow: 0 0 40px rgba(138, 43, 226, 0.5);
+            background: linear-gradient(45deg, #8a2be2, #ba55d3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 120px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #e0e0e0;
+        }
+
+        /* Skills Section Styles */
+        .skills-lists {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .skills-category {
+            background: rgba(138, 43, 226, 0.1);
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .skills-category:hover {
+            box-shadow: 0 10px 30px rgba(138, 43, 226, 0.3);
+            border-color: #8a2be2;
+        }
+
+        .skills-category h3 {
+            color: #ba55d3;
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            text-align: center;
+            background: linear-gradient(45deg, #8a2be2, #ba55d3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .skills-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skills-list li {
+            background: rgba(138, 43, 226, 0.1);
+            border: 1px solid rgba(138, 43, 226, 0.2);
+            border-radius: 8px;
+            padding: 12px 20px;
+            margin: 10px 0;
+            color: #e0e0e0;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .skills-list li:hover {
+            background: rgba(138, 43, 226, 0.2);
+            border-color: #8a2be2;
+            transform: translateX(5px);
+        }
+
+        .skills-list li::before {
+            content: '▶';
+            color: #8a2be2;
+            font-size: 12px;
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* For ordered list */
+        ol.skills-list {
+            counter-reset: skill-counter;
+        }
+
+        ol.skills-list li::before {
+            counter-increment: skill-counter;
+            content: counter(skill-counter);
+            background: linear-gradient(45deg, #8a2be2, #ba55d3);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: bold;
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: rgba(138, 43, 226, 0.08);
+            border: 1px solid rgba(138, 43, 226, 0.2);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 20px 40px rgba(138, 43, 226, 0.2);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .train-icon {
+            width: 120px;
+            height: 80px;
+            background: linear-gradient(135deg, #4a90e2, #357abd);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .train-icon::before {
+            content: '🚂';
+            font-size: 40px;
+        }
+
+        .pharmacy-icon {
+            width: 120px;
+            height: 80px;
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pharmacy-icon::before {
+            content: '⚕️';
+            font-size: 40px;
+        }
+
+        .weather-icon {
+            width: 120px;
+            height: 80px;
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .weather-icon::before {
+            content: '🌤️';
+            font-size: 40px;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-title {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            color: #ba55d3;
+            font-weight: 600;
+        }
+
+        .project-description {
+            color: #cccccc;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .project-features {
+            color: #e0e0e0;
+            margin: 15px 0;
+            padding-left: 0;
+        }
+
+        .project-features li {
+            background: rgba(138, 43, 226, 0.1);
+            border-left: 3px solid #8a2be2;
+            padding: 8px 15px;
+            margin: 8px 0;
+            border-radius: 0 8px 8px 0;
+            transition: all 0.3s ease;
+        }
+
+        .project-features li:hover {
+            background: rgba(138, 43, 226, 0.2);
+            transform: translateX(5px);
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tech-tag {
+            background: linear-gradient(45deg, #8a2be2, #ba55d3);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+
+        .education-section,
+        .certifications-section {
+            background: rgba(138, 43, 226, 0.05);
+            border: 1px solid rgba(138, 43, 226, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+
+        .education-item,
+        .cert-item {
+            background: rgba(138, 43, 226, 0.1);
+            border: 1px solid rgba(138, 43, 226, 0.2);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .education-item:hover,
+        .cert-item:hover {
+            box-shadow: 0 8px 20px rgba(138, 43, 226, 0.2);
+        }
+
+        .education-item h3,
+        .cert-item h3 {
+            color: #ba55d3;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .education-details,
+        .cert-details {
+            color: #cccccc;
+            font-size: 1.1em;
+        }
+
+        .gpa {
+            color: #27ae60;
+            font-weight: bold;
+            float: right;
+        }
+
+        /* Resume Section Specific Styles */
+        .resume-section {
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.1), rgba(75, 0, 130, 0.1));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .resume-section::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -15%;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(138, 43, 226, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .resume-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .resume-card {
+            background: rgba(138, 43, 226, 0.1);
+            border: 2px solid rgba(138, 43, 226, 0.3);
+            border-radius: 20px;
+            padding: 50px 40px;
+            margin: 40px 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .resume-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(45deg, #8a2be2, #ba55d3);
+            border-radius: 20px;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            box-shadow: 0 10px 30px rgba(138, 43, 226, 0.4);
+        }
+
+        .resume-icon::before {
+            content: '📄';
+        }
+
+        .resume-title {
+            font-size: 2.5em;
+            color: #ba55d3;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .resume-description {
+            font-size: 1.3em;
+            color: #e0e0e0;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .resume-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .resume-info-item {
+            background: rgba(138, 43, 226, 0.1);
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .resume-info-icon {
+            font-size: 1.5em;
+        }
+
+        .resume-info-text {
+            text-align: left;
+        }
+
+        .resume-info-text strong {
+            color: #ba55d3;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .resume-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .resume-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            padding: 18px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            border: 2px solid;
+        }
+
+        .resume-btn.primary {
+            background: linear-gradient(45deg, #8a2be2, #ba55d3);
+            color: white;
+            border-color: transparent;
+        }
+
+        .resume-btn.primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(138, 43, 226, 0.4);
+        }
+
+        .resume-btn.secondary {
+            background: transparent;
+            color: #ba55d3;
+            border-color: #ba55d3;
+        }
+
+        .resume-btn.secondary:hover {
+            background: rgba(138, 43, 226, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(138, 43, 226, 0.2);
+        }
+
+        .btn-icon {
+            font-size: 1.2em;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(138, 43, 226, 0.1);
+            border-radius: 20px;
+            margin-top: 60px;
+            border: 1px solid rgba(138, 43, 226, 0.2);
+        }
+
+        /* Certificate specific styles */
+        .cert-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, #8a2be2, #ba55d3);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .cert-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .cert-content {
+            flex: 1;
+        }
+
+        .cert-date {
+            color: #8a2be2;
+            font-weight: bold;
+            font-size: 0.9em;
+            margin-top: 8px;
+        }
+
+        .cert-issuer {
+            color: #ba55d3;
+            font-style: italic;
+            font-size: 0.95em;
+            margin-top: 5px;
+        }
+
+        /* Education Icon Styles */
+        .education-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, #8a2be2, #ba55d3);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .education-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .education-content {
+            flex: 1;
+        }
+
+        .percentage {
+            color: #27ae60;
+            font-weight: bold;
+            float: right;
+        }
+
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Section IDs for navigation */
+        .section {
+            scroll-margin-top: 100px;
+        }
+
+        /* CSS-based animations for dynamic effects */
+        .skills-category,
+        .project-card,
+        .cert-item,
+        .education-item {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Staggered animation delays for dynamic appearance */
+        .skills-category:nth-child(1) { animation-delay: 0.1s; }
+        .skills-category:nth-child(2) { animation-delay: 0.2s; }
+        
+        .project-card:nth-child(1) { animation-delay: 0.1s; }
+        .project-card:nth-child(2) { animation-delay: 0.2s; }
+        .project-card:nth-child(3) { animation-delay: 0.3s; }
+        
+        .cert-item:nth-child(1) { animation-delay: 0.1s; }
+        .cert-item:nth-child(2) { animation-delay: 0.2s; }
+        .cert-item:nth-child(3) { animation-delay: 0.3s; }
+        .cert-item:nth-child(4) { animation-delay: 0.4s; }
+        .cert-item:nth-child(5) { animation-delay: 0.5s; }
+        
+        .education-item:nth-child(1) { animation-delay: 0.1s; }
+        .education-item:nth-child(2) { animation-delay: 0.2s; }
+
+        /* Enhanced hover animations using pure CSS */
+        .nav-links a {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-links a:hover {
+            transform: translateY(-3px);
+        }
+
+        .resume-btn {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .resume-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Pulse animation for profile images */
+        .profile-img,
+        .about-profile-img {
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 40px rgba(138, 43, 226, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 60px rgba(138, 43, 226, 0.8);
+            }
+        }
+
+        /* Floating animation for decorative elements */
+        .resume-section::before {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .about-section::before {
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        .about-section::after {
+            animation: float 10s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: relative;
+                top: 0;
+                left: 0;
+                width: 100%;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .container {
+                padding-top: 20px;
+            }
+
+            h1 { font-size: 2.5em; }
+            .contact-info { flex-direction: column; align-items: center; }
+            .about-content { 
+                flex-direction: column; 
+                text-align: center; 
+            }
+            .about-profile-img {
+                width: 200px;
+                height: 200px;
+                font-size: 80px;
+            }
+            .skills-lists { grid-template-columns: 1fr; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .container { padding: 10px; }
+            .resume-buttons { flex-direction: column; align-items: center; }
+            
+            .education-item,
+            .cert-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .education-icon,
+            .cert-icon {
+                align-self: center;
+                margin: 0 0 15px 0;
+            }
+        }
+    </style>
+
+    <!-- Internal CSS for About Section -->
+    <style>
+        .about-section {
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.1), rgba(75, 0, 130, 0.1));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(138, 43, 226, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .about-section::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(186, 85, 211, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .about-section .about-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-section h2 {
+            position: relative;
+            z-index: 2;
+        }
+        .profile-pic {
+    width: 250px;       /* Adjust size */
+    height: 250px;
+    border-radius: 50%; /* Makes it circular */
+    overflow: hidden;   /* Hides edges outside the circle */
+    border: 5px solid #8b5cf6; /* Optional border with same purple color */
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.6); /* Glow effect */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image fills the circle */
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav class="nav-menu">
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#certificates">Certificates</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Header Section -->
+        <header id="home">
+            
+            <h1>ADHITHYA SREE A</h1>
+            <div class="professional-title">Problem Solver | Code Enthusiast </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <a href="mailto:adithyasree941@gmail.com" style="color: whitesmoke; font-weight: bold;">adithyasree941@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span>📱</span>
+                    <span>+91 9840530901</span>
+                </div>
+                <div class="contact-item">
+                    <span>💼</span>
+                    <a href="https://www.linkedin.com/in/adhithyasree" target="_blank">LinkedIn</a>
+                </div>
+                <div class="contact-item">
+                    <span>💻</span>
+                    <a href="https://leetcode.com/u/Adhithyasree/" target="_blank">LeetCode</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- About Section (Styled with Internal CSS) -->
+        <section class="section about-section" id="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="profile-pic">
+                    <img src="images.jpg" alt="Profile Photo">
+                </div>
+
+                <div class="about-text">
+                    <p><strong>Hello! I'm ADHITHYA SREE A</strong></p>
+                    
+                    <p>I’m a Computer Science and Engineering student at SRM University with a strong passion for software development and emerging technologies. I have been building my skills to create clean, responsive, and engaging solutions, and I take pride in designing systems that are simple, intuitive, and effective.</p> <p>As an active learner, I thrive on exploring new technologies and strengthening my skills through hands-on projects, technical events, and collaborations. I enjoy applying my knowledge to real-world challenges and continuously seek opportunities to broaden my expertise.</p> <p>My goal is to grow into a versatile professional capable of contributing innovative and practical solutions to modern technological problems. I am eager to take on challenging projects, collaborate with forward-thinking teams, and leverage my adaptability and dedication to make a meaningful impact in the tech industry.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills Section -->
+        <section class="section" id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-lists">
+                <div class="skills-category">
+                    <h3>Programming Languages</h3>
+                    <ul class="skills-list">
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>C/C++</li>   
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                    </ul>
+                </div>
+                
+                <div class="skills-category">
+                    <h3>Tools & Technologies</h3>
+                    <ol class="skills-list">
+                        <li>SQL</li>
+                        <li>MySQL</li>
+                        
+                        <li>Tkinter</li>
+                        <li>PyQt5</li>
+                        
+                        <li>OpenWeatherMap API</li>
+                        <li>Canva</li>
+                        <li>Video Editing</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects Section -->
+        <section class="section" id="projects">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="train.png" alt="Train Icon" style="width: 400px; height: 200px;">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title" style="color:  #ba55d3; font-weight: bold;">Train Reservation System</h3>
+                        <p class="project-description">A comprehensive desktop-based train ticket booking system with multiple features:</p>
+                        <ul class="project-features">
+                            <li>User registration and secure login system</li>
+                            <li>Train schedule browsing and seat availability checking</li>
+                            <li>Booking cancellation</li>
+                            <li>Admin panel for schedule management</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">JDBC</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="medical.png" alt="Medical Icon" width="400" height="200">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Medco Pharma - Online Pharmacy</h3>
+                        <p class="project-description">A responsive online pharmacy website with modern frontend design:</p>
+                        <ul class="project-features">
+                            <li>Responsive user interface design using HTML, CSS, and JavaScript</li>
+                            <li>Interactive product catalog with search functionality</li>
+                            <li>User-friendly forms for prescription uploads</li>
+                            <li>Shopping cart and checkout process</li>
+                            <li>Backend integration with Flask and PostgreSQL (team collaboration)</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="weather.png" alt="Weather Icon" width="400" height="200">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Weather App</h3>
+                        <p class="project-description">A GUI-based weather application featuring real-time data:</p>
+                        <ul class="project-features">
+                            <li>Real-time weather data fetching using OpenWeatherMap API</li>
+                            <li>Intuitive PyQt5 graphical user interface</li>
+                            <li>Error handling for invalid city names and network issues</li>
+                            <li>Emoji-based visual indicators for weather conditions</li>
+                            <li>Temperature display in multiple units (Celsius/Fahrenheit)</li>
+                        </ul>
+                        <div class="tech-stack">
+                           
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">PyQt5</span>
+                            <span class="tech-tag">OpenWeatherMap API</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Resume Section -->
+        <section class="section resume-section" id="resume">
+            <h2>Resume</h2>
+            <div class="resume-container">
+                <div class="resume-card">
+                    <div class="resume-icon"></div>
+                    <h3 class="resume-title">My Resume</h3>
+                    <p class="resume-description">
+                        Download or view my complete resume with detailed information about my certificates, skills, and projects.
+                    </p>
+                    
+                    <div class="resume-info-grid">
+                        <div class="resume-info-item">
+                            <span class="resume-info-icon">👤</span>
+                            <div class="resume-info-text">
+                                <strong>ADHITHYA SREE A</strong>
+                                Full Stack Developer
+                            </div>
+                        </div>
+                        <div class="resume-info-item">
+                            <span class="resume-info-icon">🎓</span>
+                            <div class="resume-info-text">
+                                <strong>CSE Student at SRM University</strong>
+                                Current CGPA: 9.83/10.0
+                            </div>
+                        </div>
+                        <div class="resume-info-item">
+                            <span class="resume-info-icon">⭐</span>
+                            <div class="resume-info-text">
+                                <strong>GPA: 9.83/10.0</strong>
+                                Academic Excellence
+                            </div>
+                        </div>
+                        
+                        </div>
+                    </div>
+
+                    <div class="resume-buttons">
+                        <a href="resume.pdf" class="resume-btn primary">
+                            <span class="btn-icon">👁️</span>
+                            View Resume
+                        </a>
+                        <a href="resume.pdf" class="resume-btn secondary">
+                            <span class="btn-icon">⬇️</span>
+                            Download PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="education-section" id="education">
+            <h2>Education</h2>
+            
+            <div class="education-item">
+                <div class="education-icon">🎓</div>
+                <div class="education-content">
+                    <h3>B.Tech in Computer Science & Engineering</h3>
+                    <div class="education-details">
+                        SRM Institute of Science and Technology | 2023 - 2027
+                        <span class="gpa">CGPA: 9.83/10.0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="education-item">
+                <div class="education-icon">🏫</div>
+                <div class="education-content">
+                    <h3>Higher Secondary Education</h3>
+                    <div class="education-details">
+                        St. John's Matriculation Higher Secondary School | 2023
+                        <span class="percentage">Percentage: 83.3%</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section class="certifications-section" id="certificates">
+            <h2>Certifications & Achievements</h2>
+            
+            <div class="cert-item">
+                <div class="cert-icon">♨️</div>
+                <div class="cert-content">
+                    <h3>Java (Basic) Certification</h3>
+                    <div class="cert-details">
+                        Successfully completed Java fundamentals and programming concepts
+                        <div class="cert-issuer">HackerRank</div>
+                        <div class="cert-date">October 2024</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-icon">🖥️</div>
+                <div class="cert-content">
+                    <h3>Java Programming</h3>
+                    <div class="cert-details">
+                        Comprehensive Java programming course covering OOP concepts and applications
+                        <div class="cert-issuer">Great Learning Academy</div>
+                        <div class="cert-date">October 2024</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-icon">🔒</div>
+                <div class="cert-content">
+                    <h3>Cyber Security, Web Development & AI Workshop</h3>
+                    <div class="cert-details">
+                        Multi-domain workshop covering cybersecurity fundamentals, web development best practices, and AI concepts
+                        <div class="cert-issuer">GeeksforGeeks</div>
+                        <div class="cert-date">February 2025</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-icon">💡</div>
+                <div class="cert-content">
+                    <h3>160 Days of Problem Solving</h3>
+                    <div class="cert-details">
+                        Intensive problem-solving program focusing on data structures and algorithms
+                        <div class="cert-issuer">GeeksforGeeks</div>
+                        <div class="cert-date">May 2025</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-icon">🐍</div>
+                <div class="cert-content">
+                    <h3>Python Internship</h3>
+                    <div class="cert-details">
+                        Hands-on experience in Python programming and application development
+                        <div class="cert-issuer">Pantech Solutions</div>
+                        <div class="cert-date">June 2025</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2025 Adhithya Sree A. All rights reserved.</p>
+            <p>Designed with passion for innovation and excellence.</p>
+        </footer>
+    </div>
+</body>
+</html>
